@@ -1,65 +1,38 @@
 import { Box, Button, TextField } from '@mui/material';
 import React from 'react';
 
-const Form = () => {
+export const Form = () => {
     return (
         <Box>
             <form>
                 <TextField
                     style={{ width: "200px", margin: "5px" }}
                     type="text"
-                    label="setgoal"
+                    label="Name"
                     variant="outlined"
                 />
                 <br />
                 <TextField
                     style={{ width: "200px", margin: "5px" }}
                     type="text"
-                    label="goal description"
+                    label="Email"
                     variant="outlined"
                 />
                 <br />
                 <TextField
                     style={{ width: "200px", margin: "5px" }}
                     type="text"
-                    label="Diversity catagory"
+                    label="Phone"
                     variant="outlined"
                 />
                 <br />
                 <TextField
                     style={{ width: "200px", margin: "5px" }}
                     type="text"
-                    label="Attribute"
+                    label="Address"
                     variant="outlined"
                 />
-                <br />
-                <TextField
-                    style={{ width: "200px", margin: "5px" }}
-                    type="text"
-                    label="goal stage"
-                    variant="outlined"
-                />
-                <br />
-                <TextField
-                    style={{ width: "200px", margin: "5px" }}
-                    type="number"
-                    label="job id"
-                    variant="outlined"
-                />
-                <br />
-                <TextField
-                    style={{ width: "200px", margin: "5px" }}
-                    type="text"
-                    label="job region"
-                    variant="outlined"
-                />
-                <br />
-                <Button variant="contained" color="primary">
-                    save
-                </Button>
             </form>
         </Box>
     );
 };
-
-export default Form;

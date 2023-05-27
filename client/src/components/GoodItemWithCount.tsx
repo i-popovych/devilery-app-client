@@ -1,11 +1,14 @@
-import React, { FC } from 'react';
+import React, { FC, PropsWithChildren } from 'react';
+import {Card, CardContent} from "@mui/material";
 
-export const GoodItemWithCount: FC<{count: number, childern: React.ReactNode}> = ({count, childern}) => {
+export const GoodItemWithCount: FC<PropsWithChildren<{count: number}>> = ({children, count}) => {
     return (
-        <div>
-            {childern}
-            {count}
-        </div>
+        <Card>
+            {children}
+            <CardContent>
+                {count}
+            </CardContent>
+        </Card>
     );
 };
 
