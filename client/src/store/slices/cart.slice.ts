@@ -48,6 +48,10 @@ export const cartSlice = createSlice({
 })
 
 export const getTotalPrice = (state: RootState) => state.cart.items.reduce((acc, item) => acc += item.price * item.count, 0)
+export const getCountById = (id: number) => (state: RootState) => {
+    const item = state.cart.items.find(i => i.id === id)
+    return item ? item.count : 0
+}
 
 
 export const {addItem, deleteItem} = cartSlice.actions

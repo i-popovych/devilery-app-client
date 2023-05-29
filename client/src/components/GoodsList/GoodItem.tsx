@@ -1,9 +1,9 @@
-import {Button, Card, CardActions} from '@mui/material';
+import {Button, Card, CardActions, Typography} from '@mui/material';
 import React, {FC} from 'react';
 import GoodCardContent from "../shared/GoodCardContent";
 import {IProduct} from "../../models/db";
 import {useDispatch} from "react-redux";
-import {addItem} from '../../store/slices/cart.slice';
+import {addItem, getCountById} from '../../store/slices/cart.slice';
 import {useAppSelector} from "../../hooks/useAppDispatch";
 import {ModalElement} from "../shared/ModalElement";
 
@@ -11,6 +11,8 @@ import {ModalElement} from "../shared/ModalElement";
 export const GoodItem: FC<IProduct> = (props) => {
     const dispatch = useDispatch()
     const shopId = useAppSelector(state => state.cart.currentShopId)
+    const itemsInCart = useAppSelector(getCountById(props.id))
+
 
     const [open, setOpen] = React.useState(false);
     const onModelOpen = () => setOpen(true);
@@ -34,7 +36,7 @@ export const GoodItem: FC<IProduct> = (props) => {
             <Card>
                 <GoodCardContent {...props}/>
                 <CardActions>
-                    <Button size="small" onClick={handleAddItem}>Order</Button>
+                    <Button size="small" onClick={handleAddItem}> {itemsInCart ? `(${itemsInCart})` : ''} Order</Button>
                 </CardActions>
             </Card>
         </>

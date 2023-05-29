@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Grid, Typography} from "@mui/material";
+import {Box, Divider, Grid, Typography} from "@mui/material";
 import {ShopItem} from './ShopItem';
 import {IShopItem} from "../../models/db";
 import Api from "../../api";
@@ -23,14 +23,17 @@ export const ShopsList = () => {
 
     return (
         <Grid container component="article" sx={{
-            backgroundColor: 'red', width: '370px', padding: "10px 30px",
-            rowGap: "20px", alignContent: "start"
+            width: '350px', padding: "20px 30px 40px 30px",
+            border: "2px solid black", borderRadius: "12px",
+            rowGap: "20px", justifyContent: "center"
         }}>
-            <Typography component="h3">Shops:</Typography>
+            <Grid item md={8}>
+                    <Typography component="h3" variant="h5">Shops:</Typography>
+            </Grid>
             {items && (
                 <>
-                    <NavLink to={'/shop'}><ShopItem title={"All goods"}/></NavLink>
-                    {items.map(i => <NavLink to={`/shop/${i.id}`}><ShopItem title={i.title}/></NavLink>)}
+                    <Grid item md={8}> <ShopItem title={"All goods"} id={-1}/> </Grid>
+                    {items.map(i => <Grid item key={i.id} md={8}> <ShopItem {...i}/> </Grid>)}
                 </>
             )}
         </Grid>

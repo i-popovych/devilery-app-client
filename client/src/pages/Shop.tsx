@@ -11,7 +11,7 @@ const Shop = () => {
             <Grid item md={4}>
                 <ShopsList />
             </Grid>
-            <Grid item md={6}>
+            <Grid item md={8}>
                 <GoodsList />
             </Grid>
 

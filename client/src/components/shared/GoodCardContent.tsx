@@ -6,14 +6,14 @@ const GoodCardContent: FC<IProduct> = ({id, imgUrl, shopId, title, price}) => {
     return (
         <>
             <CardMedia
-                sx={{wight: "200px", height: "200px", objectFit: "cover"}}
+                sx={{wight: "180px", height: "180px", objectFit: "cover"}}
                 component="img"
                 alt={title}
                 image={imgUrl}
             />
             <CardContent>
-                <Typography variant="h5">{title}</Typography>
-                <Typography>Price: {price}</Typography>
+                <Typography variant="subtitle1">{title}</Typography>
+                <Typography>Price: {price} ₴</Typography>
             </CardContent>
         </>
     );
