@@ -2,13 +2,21 @@ import React from 'react';
 import {Box, Grid} from "@mui/material";
 import {ShopsList} from "../components/ShopsList/ShopsList";
 import {GoodsList} from "../components/GoodsList/GoodsList";
+import {useParams} from "react-router-dom";
 
 const Shop = () => {
+
     return (
-        <Box sx={{display: "flex", columnGap: "15px", padding: "10px"}}>
-            <ShopsList />
-            <GoodsList />
-        </Box>
+        <Grid container>
+            <Grid item md={4}>
+                <ShopsList />
+            </Grid>
+            <Grid item md={6}>
+                <GoodsList />
+            </Grid>
+
+
+        </Grid>
     );
 };
 
