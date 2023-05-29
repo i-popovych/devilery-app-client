@@ -1,4 +1,4 @@
-import {Grid, Typography} from '@mui/material';
+import {Alert, Grid} from '@mui/material';
 import React, {useEffect, useState} from 'react';
 import {GoodItem} from "./GoodItem";
 import {IProduct} from "../../models/db";
@@ -30,7 +30,7 @@ export const GoodsList = () => {
                 items
                     ?
                     items.map(i => <Grid key={i.id} item md={4}> <GoodItem {...i}/> </Grid>)
-                    : <Typography>No data</Typography>
+                    : <Grid item md={12} justifySelf="center"><Alert severity="info">Loading...</Alert></Grid>
             }
         </Grid>
     );

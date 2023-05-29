@@ -1,6 +1,5 @@
 const ApiError = require('../error/ApiError')
 const {Product} = require('../models/models')
-const {where} = require("sequelize");
 
 class ProductController {
     async createProduct(req, res, next) {

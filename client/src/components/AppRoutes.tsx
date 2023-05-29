@@ -3,7 +3,7 @@ import {Navigate, Route, Routes} from "react-router-dom";
 import {PagesLink} from "../models/routes";
 import Shop from "../pages/Shop";
 import ShopCart from "../pages/ShopCart";
-//+ '/:shopId'
+
 export const AppRoutes = () => {
     return (
         <Routes>

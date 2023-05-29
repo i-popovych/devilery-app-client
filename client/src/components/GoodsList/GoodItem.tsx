@@ -1,4 +1,4 @@
-import {Button, Card, CardActions, Typography} from '@mui/material';
+import {Button, Card, CardActions} from '@mui/material';
 import React, {FC} from 'react';
 import GoodCardContent from "../shared/GoodCardContent";
 import {IProduct} from "../../models/db";

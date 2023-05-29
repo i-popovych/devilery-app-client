@@ -5,12 +5,12 @@ import {AppRoutes} from "./components/AppRoutes";
 
 const App = () => {
     return (
-        <div>
+        <>
             <Header/>
             <Box sx={{p: "15px 80px"}}>
                 <AppRoutes/>
             </Box>
-        </div>
+        </>
     );
 };
 

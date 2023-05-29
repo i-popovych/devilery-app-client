@@ -9,6 +9,10 @@ code {
     monospace;
 }
 
+body > iframe {
+  display: none !important;
+}
+
 a {
   text-decoration: none;
 }

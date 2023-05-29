@@ -1,5 +1,5 @@
-import { Box, Button, TextField } from '@mui/material';
-import React, {FC, useState } from 'react';
+import {Button, TextField} from '@mui/material';
+import React, {FC, useState} from 'react';
 
 export const OrderForm:
     FC<{onSubmit: (name: string, email: string, phone: string, address: string) => void }>

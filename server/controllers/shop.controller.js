@@ -5,6 +5,7 @@ class ShopController {
     async getShops(req, res, next) {
         try {
             const shops = await Shop.findAll()
+            console.log(shops)
             return res.status(200).json(shops)
         } catch (e) {
             return next(e)

@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {Button, CardActions, CardContent, CardMedia, Typography} from "@mui/material";
+import {CardContent, CardMedia, Typography} from "@mui/material";
 import {IProduct} from "../../models/db";
 
 const GoodCardContent: FC<IProduct> = ({id, imgUrl, shopId, title, price}) => {

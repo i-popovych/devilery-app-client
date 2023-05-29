@@ -1,6 +1,4 @@
-const ApiError = require('../error/ApiError')
 const {Order, OrderProduct, User} = require('../models/models')
-const {where} = require("sequelize");
 const UserService = require('../services/user.service')
 
 class OrderController {
