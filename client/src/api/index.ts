@@ -15,6 +15,13 @@ class Api {
     async getGoods() {
         return (await base.get<IProduct[]>('product')).data
     }
+
+    async createOrder(name: string, email: string, phone: string, address: string,
+                      foodArr: {productId: number, count: number}[]) {
+        return await base.post('order', {
+            name, email, phone, address, foodArr
+        })
+    }
 }
 
 export default new Api()

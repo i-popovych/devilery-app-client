@@ -8,7 +8,7 @@ class OrderController {
         try {
             const {name, email, phone, address, foodArr} = req.body
 
-            let user = await User.findByPk(1)
+            let user = await User.findOne({where: {email}})
             if (!user)
                 user = await UserService.registUser({name, email, phone})
 
