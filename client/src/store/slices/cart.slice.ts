@@ -53,5 +53,4 @@ export const getCountById = (id: number) => (state: RootState) => {
     return item ? item.count : 0
 }
 
-
 export const {addItem, deleteItem} = cartSlice.actions

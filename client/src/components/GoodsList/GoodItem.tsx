@@ -13,7 +13,6 @@ export const GoodItem: FC<IProduct> = (props) => {
     const shopId = useAppSelector(state => state.cart.currentShopId)
     const itemsInCart = useAppSelector(getCountById(props.id))
 
-
     const [open, setOpen] = React.useState(false);
     const onModelOpen = () => setOpen(true);
     const onModelClose = () => setOpen(false);

@@ -4,7 +4,6 @@ import {NavLink} from "react-router-dom";
 
 export const ShopItem: FC<{ title: string, id: number }> = ({title, id}) => {
     const route = id === -1 ? '/shop/' : `/shop/${id}/`
-
     return (
         <NavLink style={{textDecoration: "none"}} to={route}>
             <Card sx={{
