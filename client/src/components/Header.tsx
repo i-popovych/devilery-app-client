@@ -4,14 +4,18 @@ import {NavLink} from "react-router-dom";
 import {PagesLink} from "../models/routes";
 
 export const Header = () => {
+    const lnkStyle = {
+        color: "#08070a"
+    }
+
     return (
         <AppBar position="static">
-            <Toolbar sx={{flex: 1, columnGap: 2}} component="nav">
+            <Toolbar sx={{flex: 1, columnGap: 3, ml: "7%"}} component="nav">
                 <Typography variant="h6">
-                    <NavLink to={PagesLink.SHOP}> Shop </NavLink>
+                        <NavLink style={lnkStyle} to={PagesLink.SHOP}> Shop </NavLink>
                 </Typography>
                 <Typography variant="h6">
-                    <NavLink to={PagesLink.SHOP_CART}> Shopping Cart </NavLink>
+                    <NavLink style={lnkStyle} to={PagesLink.SHOP_CART}> Shopping Cart </NavLink>
                 </Typography>
             </Toolbar>
         </AppBar>

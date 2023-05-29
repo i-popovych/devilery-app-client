@@ -1,4 +1,4 @@
-import {Box, Container, Grid, Typography} from '@mui/material';
+import {Alert, Box, Container, Grid, Typography} from '@mui/material';
 import React, {useState} from 'react';
 import {GoodItemWithCount} from "../components/GoodItemWithCount";
 import {OrderForm} from '../components/OrderForm';
@@ -36,8 +36,6 @@ const ShopCart = () => {
         }
     }
 
-    if (!items) return <div>No data</div>
-
     return (
         <>
         <ModalElement onClose={() => setModel(false)} open={model} title={data.title} description={data.description} />
@@ -46,18 +44,19 @@ const ShopCart = () => {
                 <Grid item md={3}>
                     <OrderForm onSubmit={onSubmit}/>
                 </Grid>
-                <Grid item md={7}>
-                    <Container sx={{height: "65vh", backgroundColor: "red", overflowY: "scroll"}}>
-                        <Grid container>
-                            <Grid item md={12}>
-                                {items.map(i => <GoodItemWithCount {...i} />)}
-                            </Grid>
+                <Grid item md={8}>
+                    {items.length ? (
+                    <Container sx={{height: "72vh", border: "2px solid black",
+                        overflowY: "auto", p: "10px", borderRadius: "12px"}}>
+                        <Grid container justifyContent="space-between" sx={{gap: "15px", pt: "10px"}}>
+                            {items.map(i => <Grid key={i.id} item md={5.8}><GoodItemWithCount {...i} /></Grid>)}
                         </Grid>
                     </Container>
+                    ) : <Alert severity="info">Cart is empty</Alert>}
                 </Grid>
-                <Grid item md={10} sx={{backgroundColor: "red"}}>
+                <Grid item md={11}>
                     <Box sx={{display: "flex", justifyContent: "end", alignItems: "baseline", columnGap: "25px"}}>
-                        <Typography sx={{mr: "20px"}}>Total price: {totalPrice}</Typography>
+                        <Typography>Total price: {totalPrice} ₴</Typography>
                     </Box>
                 </Grid>
             </Grid>

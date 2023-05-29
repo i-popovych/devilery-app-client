@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {Button, Card, CardActions, CardContent} from "@mui/material";
+import {Box, Button, Card, CardActions, CardContent, Typography} from "@mui/material";
 import {ICartProduct} from "../models/cartModel";
 import GoodCardContent from "./shared/GoodCardContent";
 import { useDispatch } from 'react-redux';
@@ -21,11 +21,15 @@ export const GoodItemWithCount: FC<ICartProduct> = (props) => {
     return (
         <Card>
             <GoodCardContent {...props}/>
-            <CardContent>{count}</CardContent>
-            <CardActions>
-                <Button onClick={handleAddItem}>Add item</Button>
-                <Button onClick={handleDeleteItem}>Delete item</Button>
-            </CardActions>
+            <Box sx={{display: "flex", justifyContent: "space-between", alignItems: "baseline"}}>
+                <CardContent>
+                    <Typography variant="subtitle2">Quantity: {count}</Typography>
+                </CardContent>
+                <CardActions>
+                    <Button onClick={handleAddItem}>Add item</Button>
+                    <Button onClick={handleDeleteItem}>Delete item</Button>
+                </CardActions>
+            </Box>
         </Card>
     );
 };

@@ -25,11 +25,11 @@ export const GoodsList = () => {
     }, [shopId])
 
     return (
-        <Grid container>
+        <Grid container spacing={2}>
             {
                 items
                     ?
-                    items.map(i => <Grid item md={4}> <GoodItem {...i}/> </Grid>)
+                    items.map(i => <Grid key={i.id} item md={4}> <GoodItem {...i}/> </Grid>)
                     : <Typography>No data</Typography>
             }
         </Grid>

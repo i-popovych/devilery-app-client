@@ -16,7 +16,6 @@ export const OrderForm:
     }
 
     return (
-        <Box>
             <form onSubmit={handleSubmit}>
                 <TextField
                     value={name}
@@ -53,8 +52,8 @@ export const OrderForm:
                     label="Address"
                     variant="outlined"
                 />
-                <Button type="submit">Submit</Button>
+                <br/>
+                <Button type="submit" sx={{mt: "5px"}}>Submit</Button>
             </form>
-        </Box>
     );
 };
