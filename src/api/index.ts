@@ -1,7 +1,7 @@
 import axios from "axios";
 import {IProduct, IShopItem} from "../models/db";
 
-const base = axios.create({baseURL: 'http://localhost:8000/api/'})
+const base = axios.create({baseURL: 'https://delivery-app-server2.herokuapp.com/api/'})
 
 class Api {
     async getShops() {
