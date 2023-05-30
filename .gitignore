@@ -1,8 +1,4 @@
-/client/node_modules
-/client/build
-/client/yarn-git error.log
-
-/server/node_modules
-/server/.env
-
+/node_modules
+/build
+/yarn-error.log
 .idea
