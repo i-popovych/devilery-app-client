@@ -1,3 +1,12 @@
+# Description
+This project was made as a test task. 
+In the project, you can view a list of stores and see what products this store sells. 
+You can also add products to the cart and order a purchase. 
+All purchases are stored in the database. Project backend: [delivery-app-server](https://github.com/i-popovych/delivery-app-server).
+To open the set, follow this [link](https://devilery-app-client.vercel.app/shop). 
+
+Important note: I use a free cloud postgres database with a possible limit on the number of requests, so if you see "loading" for a long time, then you need to try to visit the site later.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
