@@ -4,10 +4,14 @@ import {GoodItem} from "./GoodItem";
 import {IProduct} from "../../models/db";
 import Api from "../../api";
 import {useParams} from "react-router-dom";
+import {useSyncReduxLS} from "../../hooks/useSyncReduxLS";
+import {getCartItem} from "../../store/slices/cart.slice";
 
 export const GoodsList = () => {
     const [items, setItems] = useState<IProduct[] | null>(null)
     const {shopId} = useParams()
+
+    useSyncReduxLS('cart', getCartItem)
 
     useEffect(() => {
         setItems(null)

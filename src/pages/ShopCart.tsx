@@ -3,9 +3,10 @@ import React, {useState} from 'react';
 import {GoodItemWithCount} from "../components/GoodItemWithCount";
 import {OrderForm} from '../components/OrderForm';
 import {useAppSelector} from "../hooks/useAppDispatch";
-import {getTotalPrice} from "../store/slices/cart.slice";
+import {getCartItem, getTotalPrice} from "../store/slices/cart.slice";
 import {ModalElement} from "../components/shared/ModalElement";
 import Api from "../api";
+import {useSyncReduxLS} from "../hooks/useSyncReduxLS";
 
 const ShopCart = () => {
     const {items} = useAppSelector(state => state.cart)
@@ -13,6 +14,8 @@ const ShopCart = () => {
 
     const [model, setModel] = useState(false)
     const [data, setData] = useState({title: "", description: ""})
+
+    useSyncReduxLS('cart', getCartItem)
 
     const onSubmit = async (name: string, email: string, phone: string, address: string) => {
         const isField = email && name && phone && address
