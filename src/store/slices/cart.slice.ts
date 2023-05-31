@@ -45,6 +45,10 @@ export const cartSlice = createSlice({
             if(!newItems.length) state.currentShopId = 0
 
             state.items = newItems
+        },
+        clearCart(state) {
+            state.items = []
+            state.currentShopId = 0
         }
     }
 })
@@ -68,4 +72,4 @@ function getCartFromLS(lsKey: string) {
     return {items, currentShopId}
 }
 
-export const {addItem, deleteItem} = cartSlice.actions
+export const {addItem, deleteItem, clearCart} = cartSlice.actions
