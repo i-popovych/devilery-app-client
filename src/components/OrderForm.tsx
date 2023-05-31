@@ -1,9 +1,13 @@
 import {Button, TextField} from '@mui/material';
 import React, {FC, useState} from 'react';
+import {useDispatch} from "react-redux";
+import {clearCart} from "../store/slices/cart.slice";
 
 export const OrderForm:
     FC<{onSubmit: (name: string, email: string, phone: string, address: string) => void }>
     = ({onSubmit}) => {
+
+    const dispatch = useDispatch()
 
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
@@ -12,7 +16,13 @@ export const OrderForm:
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
+        dispatch(clearCart())
         onSubmit(name, email, phone, address)
+    }
+
+    const handleClearCart = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault()
+        dispatch(clearCart())
     }
 
     return (
@@ -54,6 +64,7 @@ export const OrderForm:
                 />
                 <br/>
                 <Button type="submit" sx={{mt: "5px"}}>Submit</Button>
+                <Button sx={{mt: "5px"}} onClick={handleClearCart}>Clear the cart</Button>
             </form>
     );
 };
